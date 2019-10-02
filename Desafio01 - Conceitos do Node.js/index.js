@@ -12,7 +12,6 @@ function idExists(req, res, next) {
   const { id } = req.params;
 
   const project = projects.find(project => project.id == id);
-  console.log(project);
   if (!project) {
     return res.status(400).json({ error: "id not found" });
   }
@@ -33,14 +32,11 @@ server.get("/projects", (req, res) => {
 });
 
 server.post("/projects", (req, res) => {
-  console.log(req.body);
-
   projects.push({
     id: req.body.id.toString(),
     title: req.body.title.toString(),
     tasks: []
   });
-  console.log(projects);
   return res.status(200).json({ result: "ok" });
 });
 
