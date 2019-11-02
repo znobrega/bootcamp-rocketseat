@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f2f2f2;
+}
+
+img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+div .main-content {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+div .main-content .main-header {
+  height: 50px;
+  background-color: blue;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div .main-content .main-header .content {
+  width: 100%;
+  max-width: 1200px;
+  color: #FFF;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+div .main-content .main-header a {
+  text-decoration: none;
+  color: #FFF;
+}
+
+
+div .main-content .main-header a#logo {
+  font-size: 29px;
+  font-weight: bold;
+}
+
+div .main-content .main-header .content .profile {
+  display: flex;
+}
+
+div .main-content #post {
+  margin: 10px auto;
+
+  padding: 10px;
+  width: 90%;
+  max-width: 550px;
+  background: #FFF;
+}
+
+div .main-content #post .user-info {
+  display: flex;
+}
+
+div .main-content #post .user-info strong {
+  margin: 0 0 10px 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+div .main-content #post .user-info strong span {
+  font-weight: normal;
+  font-size: 12px;
+  color: gray;
+}
+
+div .main-content #post #content {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid gray;
+}
+
+div .main-content #post .comment {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+div .main-content #post .comment #comment-content{
+  margin-left: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  background: #f2f2f2;
+}
