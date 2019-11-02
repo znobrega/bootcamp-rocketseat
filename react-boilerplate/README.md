@@ -2,16 +2,15 @@
 
 ## configs
 
-> yarn add @babel/core @babel/preset-env @babel/preset-react webpack webpack-cli -D
-
-> yarn add react react-dom
+> yarn add @babel/core @babel/preset-env @babel/preset-react @babel/plugin-proposal-class-properties -D
 
 > yarn add babel-loader -D
 
-> yarn add webpack-dev-server -D
+> yarn add react react-dom prop-types
+
+> yarn add webpack webpack-cli webpack-dev-server -D
 
 > yarn add css-loader style-loader file-loader -D
-
 
 - babel.config.js
 
@@ -70,5 +69,11 @@ module.exports = {
 
 - src/index.js
 
+```js
+  import React from "react";
+  import { render } from "react-dom";
 
-<p>Tudo começa nesse arquivo</p>
+  import App from "./App";
+
+  render(<App />, document.getElementById("root"));
+```
