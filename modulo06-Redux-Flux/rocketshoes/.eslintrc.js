@@ -22,7 +22,8 @@ module.exports = {
     'react/jsx-filename-extension': ['warn', { extensions: ['.jsx', '.js'] }],
     'import/prefer-default-export': 'off',
     'react/state-in-constructor': [2, 'never'],
-    'eslint arrow-parens': ['error', 'always'],
+    'arrow-parens': ['error', 'is-needed'],
+    'no-console': ['error', { allow: ['tron'] }],
     'react/static-property-placement': [
       'warn',
       'property assignment',

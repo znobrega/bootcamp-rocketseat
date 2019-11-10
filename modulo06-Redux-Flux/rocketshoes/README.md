@@ -32,6 +32,50 @@ json-server server.json -p 3333 -w
 - todos os reducers escutam essas actions
 - redux atualiza todos os componentes que precisam da informacão
 
+## Reactotron
+DEBUG HELPER
+>yarn add reactotron-react-js reactotron-redux
+
+config folder/Reactotronconfig.js
+
+```js
+
+import Reactotron = 'reactotron-react-js'
+import {reactotronRedux} from 'reactotron-redux'
+
+if (process.env.NODE_END === 'development') {
+  const tron = Reactotron.configure()
+    .use(reactotronRedux())
+    .connect()
+
+  tron.clear();
+}
+
+```
+
+## Immer
+Lida com objetos e arrays imutaveis
+yarn add immer
+
+import produce from 'immer'
+
+## Middleware redux
+>yarn add redux-saga
+ - intercepta actions
+ - side effects
+
+## reactotron + redux saga
+
+>yarn add reactotron-redux-saga
+
+## toast
+
+> yarn add react-toastify
+
+## history
+
+>yarn add history
+
 ## Flux
 
 - Action

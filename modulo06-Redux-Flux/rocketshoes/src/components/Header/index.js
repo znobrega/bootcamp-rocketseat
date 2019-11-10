@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { MdShoppingBasket } from 'react-icons/md';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import logo from '../../assets/logo.svg';
 import { Container, Cart } from './styles';
 
@@ -16,7 +15,7 @@ function Header({ cartSize }) {
       <Cart to="/cart">
         <div>
           <strong>Meu carrinho</strong>
-          <span>{cartSize}</span>
+          <span>{cartSize} items</span>
         </div>
         <MdShoppingBasket size={36} color="#FFF" />
       </Cart>
