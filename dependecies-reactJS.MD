@@ -25,4 +25,32 @@ yarn add react-toastify
 
 yarn add history
 
-```
+```4
+
+-------
+
+## prettier + eslint + editorconfig
+
+formatar/auto-indentar cofigo
+
+## react-router-dom
+
+usar rotas pelo front-end
+
+## axios
+
+requisições http
+
+## styled-components
+
+styles com javascript 
+
+## react-icons 
+
+icones através de componentes
+
+## prop-types
+ validação de props
+
+## polished
+funções prontas para o css
