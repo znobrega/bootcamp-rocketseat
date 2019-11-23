@@ -10,8 +10,9 @@
 // Se ocorre alguma falha, para os testes
 bail: 1,
 clearMocks: true,
+collectCoverage: true,
 // onde está o codigo em todas as pastas com todos atquivos js
-collectCoverageForm:['src/app/**.*js'],
+collectCoverageForm:['src/app/**/.*js'],
 coverageDirectory: "__tests__/coverage",
 coverageReporters: [
   "text",
@@ -53,12 +54,20 @@ test('if i call soma function with 4 and 5 it should return 9', () => {
 
 ´´´
 
-```js
-import {} from 'jest';
-import request from 'supertest';
-import app from '../../src/app';
-import truncate from '../util/truncate';
+## Util
 
+- clear mongo database after each test
+```
+import mongoose from 'mongoose';
+
+export default function truncate() {
+  return Promise.all(
+    Object.keys(mongoose.connection.collections).map((key) => mongoose.connection.collections[key].deleteMany())
+  );
+}
+```
+
+```js
 describe('User', () => {
   beforeEach(async () => {
     await truncate();
@@ -73,7 +82,7 @@ describe('User', () => {
         password: '123456'
       });
 
-    expect(response.body).toHaveProperty('_id');
+    expect(response.body).toHaveProperty('email');
   });
 
   it('should not be able to register with duplicated email', async () => {
@@ -94,6 +103,26 @@ describe('User', () => {
       });
 
     expect(response.status).toBe(400);
+  });
+
+  it('shoul not be able to change password', async () => {
+    await request(app)
+      .post('/register')
+      .send({
+        name: 'Carlos N',
+        email: 'carlosnobrega@gmail.com',
+        password: '123456'
+      });
+
+    const response = await request(app)
+      .post('/update')
+      .send({
+        name: 'Carlos N',
+        email: 'carlosnobrega@gmail.com',
+        password: '123'
+      });
+
+    expect(response.status).toBe(402);
   });
 });
 
